@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Find min and max</title>
+	<meta charset="UTF-8">
+	
+	<style type="text/css">
+	p{
+		font-size: 14px;
+		color:crimson;
+	}
+	</style>
+	
+</head>
+<body>	
+	<h1>Find Largest Number</h1>
+	<p id="message" style="display:none;"></p>
+	<div>Number 1:  <input type="text" id="num1" placeholder="Enter first number"></div><br>
+	<div>Number 2:  <input type="text" id="num2" placeholder="Enter second number"></div><br>
+	<div><input type="button"  value="Show Max" onclick="findMax();"></div>
+	<script type="text/javascript">	
+
+			
+			function findMax(num1, num2){
+				var num1 = document.getElementById("num1").value;
+				var num2 = document.getElementById("num2").value;
+				var message = document.getElementsByTagName("p")[0];
+				console.log(num1 + " : " + num2);
+
+				if(isNaN(num1) || isNaN(num2) ){
+					message.style.display = "block";
+					message.innerHTML = "Please enter  a valid number!!";
+
+					return false;
+				}
+				else{
+					if(num1 > num2){
+
+						message.style.display = "block";
+						message.innerHTML = "<b>" + num1 + "</b> is the max value and <b>" + num2 + "</b> is the min value";
+
+					}
+					else{
+						message.style.display = "block";
+						message.innerHTML = "<b>" + num2 + "</b> is the max value and <b>" + num1 + "</b> is the min value";
+					}
+				}
+				
+			}
+
+	</script>
+</body>
+</html>
